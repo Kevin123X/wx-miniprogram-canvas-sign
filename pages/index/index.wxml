@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+	<van-button type="primary" bind:tap="onPopShow">签名</van-button>
+	<image src="{{signImg}}" mode="aspectFill">
+
+	</image>
+	<van-popup
+	 show="{{ show }}"
+	 round
+	 position="bottom"
+	 custom-style="height: 40%"
+	 bind:close="onClose"
+	 close-on-click-overlay="{{false}}"
+	 safe-area-inset-bottom
+	>
+		<view class="btns">
+			<van-button type="default" bind:tap="handleClearRect">清除</van-button>
+			<van-button type="default" bind:tap="handleSaveSign">确认</van-button>
+		</view>
+		<!-- <view class="placeholder" bind:touchstart="handleOnTouchStart" wx:if="{{showTip}}">
+    请清晰书写您的签名
+  </view> -->
+		<canvas
+		 wx:if="{{show}}"
+		 canvas-id="sign_box"
+		 id="sign_box"
+		 bindtouchstart="handelCanvasBegin"
+		 bindtouchmove="handleOnTouchMove"
+		 bindtouchend="handleOnTouchEnd"
+		>
+
+		</canvas>
+	</van-popup>
+</view>
+

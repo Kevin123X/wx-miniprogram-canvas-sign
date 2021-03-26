@@ -1,0 +1,20 @@
+.van-popup {
+  position: relative;
+  min-height: 600rpx;
+}
+.van-popup .btns {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.van-popup #sign_box {
+  position: absolute;
+  top: 92rpx;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 92rpx);
+  background: #eeeeee;
+  z-index: 5;
+}
